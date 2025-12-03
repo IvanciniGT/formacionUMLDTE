@@ -444,3 +444,186 @@ Los lenguajes formales son lenguajes con una gramática estricta.
                   3 = 5 8 +
 
                   tres más cinco es igual a ocho
+
+---
+
+# EJEMPLO 1: App de consola a la que le doy una palabra, un idioma y me devuelve los significados de esa palabra en ese idioma si existe.
+
+  $ buscarPalabra ES manzana
+  La palabra si existe en el diccionario de español.
+  Significados:
+  1. Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
+
+  $ buscarPalabra ES archilococo
+  La palabra no existe en el diccionario de español.
+
+---
+
+> Pregunta. Cuantos proyectos JAVA montamos para esta app?                              6
+            Si lo gestionamos con MAVEN, cuántos archivos pom.xml tenemos que crear?    7
+            Cuántos repos de git creo?                                                  7
+
+---
+No quiero un monolito... ya no estamos en es época!
+- Las palabras las voy a tener en ficheros de texto:
+  diccionarios/
+    ES.txt
+      manzana=Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
+      melón=Fruto del melonar, de forma ovalada y sabor dulce.|Persona con pocas luces.
+    EN.txt
+    FR.txt
+    IT.txt
+    DE.txt
+  > PREGUNTA: Al programa que saca los resultados por pantalla, le importa algo, si las palabras las tengo en un fichero de texto, en una base de datos, o en un servicio web? NO. Y entonces... por que querría juntarlos esos componentes
+  > PREGUNTA... Si el día de mañana cambiase la interfaz gráfica para que no fuera de consola, sino una app desktop, necesitaria cambiar la parte de gestión de palabras? NO.
+
+
+---
+
+# Principios de diseño de software
+
+No estamos en ciencias exactas. En ciencias exactas, como la física, la química, ciencias de la computación, etc, los principios son leyes. Que se cumplen y deben cumplir.
+
+Nosotros estamos en ingeniería de software. Y como rama de la ingeniería aquí no hay una solución BUENA.  Aquñi hay muchas posibles soluciones MEJORES o PEORES para mis restricciones de tiempo, dinero, recursos, etc.
+
+Solo son guías que me ayudan en la toma de decisiones.
+
+## SOLID
+
+SRP: Single Responsibility Principle
+  1. Una clase debe tener una única responsabilidad. RUINA! AMBIGUA! Define responsabilidad.
+  2. Una clase debe tener una única razón para cambiar. RUINA! Define razón para cambiar.
+  3. Una clase solo debe depender de un único actor o stakeholder. GUAY! ACTOR... de los actores del diagrama de casos de uso.
+     Alguien que tenga responsabilidad para solicitar un cambio en un coimponente.
+      > La persona que puede solicitar un cambio en la UI de nuestro programa: El usuario final.
+      > Quién define si las palabras se deben guardar en ficheros o en BBDD? El usuario final? NO.. a ese le vale mierda!
+
+OCP: Open/Closed Principle
+LSP: Liskov Substitution Principle
+ISP: Interface Segregation Principle
+DIP: Dependency Inversion Principle
+     Un componente de alto nivel no debe depender de implementaciones concretas de componentes de bajo nivel. Sino que ambos quedeben depender de abstracciones (interfaces).
+     A una clase (si lo aplico a bajo nievl) o a una implementación de un componente (si lo aplico a alto nivel) no le pueden llegar flechas. De ellos solo pueden salir flechas en el diagrama UML. Es las interfaces o los componentes abstractos (APIS) a las que les pueeden llegar flechas
+
+## SoC: Separation of Concerns
+
+Principio de separación de responsabilidades. Cada componente del sistema debe tener una única responsabilidad o preocupación.
+
+---
+
+Un producto de software por definición es un producto sujeto a cambios y mantenimientos.
+
+Un coche por definición es un producto sujeto a (cambios y) mantenimientos.
+
+  Escribir código <> Pruebas -> OK ---> Refactorización <> Pruebas -> OK -> Liberar el código
+  <------50% del trabajo--------->      <------50% del trabajo--------->
+         8 horas                               8 horas
+
+
+---
+               GestorDePalabrasAPI
+                      ^
+                      |
+            GestorDePalabrasEnFicheros         InterfazDeUsuarioAPI
+                      ^                                ^
+                      |                                |
+                     APP -----------------> Interfaz de usuario (Consola)
+                      |
+                      v
+              DiccionariosConcretos
+
+
+
+PR1: Frontal de consola                FRONT
+PR2: API de Frontal de consola         API (interfaces en JAVA)
+PR3: Gestión de palabras               BACK
+PR4: API de la Gestión de palabras     API (interfaces en JAVA)
+PR5: Aplicación                        APP (FLUJO)
+      Obtener Idioma
+      Obtener palabra
+      Mirar si tengo Diccionario para ese idioma
+      Si no lo tengo, avisar al usuario Y me piro
+      Si lo tengo, buscar palabra en el diccionario
+      Si no la encuentro, avisar al usuario Y me piro
+      Si la encuentro, mostrar los significados al usuario Y me piro
+PR6: Y los diccionarios ? Los datos? Tiene versiones? Diccionario de ES con 1000 palabras y mañana sacar uno de 5000 palabras?
+PR7: Junte todo!
+---
+
+git: submodules
+maven: multi-modules
+java: modulo (Java 9: proyecto Jigsaw)
+
+
+  proyecto-gestion-animalitos-CRUD/  MICROSERVICIO HTTP REST          Repo de git
+    .gitmodules
+
+      
+    capa-dominio/
+      api/
+        pom.xml
+      impl/
+        pom.xml
+    capa-service/
+      api/
+        pom.xml
+      impl/
+        pom.xml
+    capa-controlador/
+      v1/
+        api/
+          pom.xml
+        impl/
+          pom.xml
+      v2/
+        api/ <-- Submodule GIT
+          pom.xml
+        impl/
+          pom.xml
+      app/
+        En esta app puedo montar ese microservicio HTTP REST
+        Y veremos si más adelanta hay más microservicios (STATUS, AUTH, etc)
+    pom.xml
+      ^^
+      <modules>
+        <module>capa-dominio/api</module>
+        <module>capa-dominio/impl</module>
+        <module>capa-service/api</module>
+        <module>capa-service/impl</module>
+        <module>capa-controlador/v1/api</module>
+        <module>capa-controlador/v1/impl</module>
+        <module>capa-controlador/v2/api</module>
+        <module>capa-controlador/v2/impl</module>
+      </modules>
+
+
+---
+
+
+Fabrico bicicletas: BTWIN - Decathlon
+  - Fabrico el sillín? NO
+  - Fabrico las ruedas? NO
+  - Fabrico el cuadro? NO
+  - Fabrico el sistema de frenos? NO 
+
+  Integración de componentes... componentes que yo también ESPECIFICO: API!!!!!
+
+  Dire que quiero una rueda con TALES características.
+  Diré que quiero un sistema de frenos con TALES características.
+
+  Habrá dependencias entre mis componentes: Sistema de frenos ---> Ruedas
+
+Esas especificaciones son las APIs de mis componentes.
+Pregunta, me quiero atar yo a un modelo de rueda concreto de un fabricante?
+
+
+BTWIN XR-289 (v1)
+  - Ruedas: Rueda MTB 29" aluminio BTWIN XR-289
+  - Sistema de frenos: SHIMANO MT200 frenos de disco hidráulicos
+  - Cuadro: Cuadro aluminio BTWIN XR-289
+  - Sillín: Sillín MTB BTWIN XR-289
+BTWIN XR-289 (v2)
+  - Ruedas: Rueda MTB 29" carbono BTWIN XR-289
+  - Sistema de frenos: SHIMANITO MT210 frenos de disco hidráulicos
+  - Cuadro: Cuadro carbono BTWIN XR-289
+  - Sillín: Sillín MTB BTWIN XR-289
