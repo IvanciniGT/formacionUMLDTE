@@ -1,3 +1,14 @@
+Te lo dejo todo en un único bloque para copiar/pegar, tocando **solo** lo necesario para que:
+
+* Los bloques **Mermaid** rendericen bien.
+* Las flechas sigan la convención UML que estás usando:
+
+  * `->>` = petición / llamada.
+  * `-->>` = respuesta a una petición previa.
+
+El resto del texto lo dejo tal cual.
+
+---
 
 # UML?
 
@@ -11,10 +22,11 @@ Eso es.. hace casi 30 años! Qué tal le va al UML?
 
 Cuando sale estop del UML nos volvemos locos con ello.
 En esa época, montábamos los sistema de forma muy diferente a como lo hacemos hoy en día:
-- Metodologías en cascada: REQUISITOS -> ANÁLISIS -> "DISEÑO" del sistema en su conjunto (semanas/meses)
-- Proyectos con arquitecturas monolíticas: Sistemas enormes, con cientos de clases (o miles) que evidentemente necesitaban un diseño previo muy detallado, sino de una forma de comunicar el diseño a todo el equipo.
-- Equipos grandes: Equipos de decenas o cientos de personas, donde la comunicación del diseño era fundamental.
-- Había cierta obsesión con el papel / documentación: Los documentos de diseño eran muy importantes, y se esperaba que estuvieran bien detallados y completos (Normativas muy estrictas en algunos sectores como el aeroespacial, defensa, etc) + ITIL y CMMI.
+
+* Metodologías en cascada: REQUISITOS -> ANÁLISIS -> "DISEÑO" del sistema en su conjunto (semanas/meses)
+* Proyectos con arquitecturas monolíticas: Sistemas enormes, con cientos de clases (o miles) que evidentemente necesitaban un diseño previo muy detallado, sino de una forma de comunicar el diseño a todo el equipo.
+* Equipos grandes: Equipos de decenas o cientos de personas, donde la comunicación del diseño era fundamental.
+* Había cierta obsesión con el papel / documentación: Los documentos de diseño eran muy importantes, y se esperaba que estuvieran bien detallados y completos (Normativas muy estrictas en algunos sectores como el aeroespacial, defensa, etc) + ITIL y CMMI.
 
 Crearón herramienats para trabajar con UML, como Rational Rose (de Rational Software, luego comprada por IBM), Visual Paradigm, Enterprise Architect, etc. UN TOSTON DESCOMUNAL DE HERRAMIENTAS. Complejas, tediosas, caras.
 
@@ -24,9 +36,9 @@ Una cosa es un diseño... y otra cosa es el código final. Mantener ambos sincro
 Y esas herramienats intentaban hacer ese trabajo... mantener el diseño y el código sincronizados.
 Eso era una ruina: Porque no hacíamos los diagramas para ser entendidos por humanos, sino para que las herramientas pudieran generar código o mantener el diseño sincronizado con el código. Y los humanos cuando hablamos tenemos una laxitud enorme en las gramáticas (nos las pasamos continuamente por las narices). Las herramientas no (son muy puntillosas con la sintaxis).
 
-Todo eso hizo que poco a poco, sobre todo con los cambios de paradigma que nos fuimos encontrando (metodologías ágiles, arquitecturas orientadas a componentes desacoplados, equipos más pequeños, etc) el UML fuera perdiendo peso en el desarrollo de software. 
+Todo eso hizo que poco a poco, sobre todo con los cambios de paradigma que nos fuimos encontrando (metodologías ágiles, arquitecturas orientadas a componentes desacoplados, equipos más pequeños, etc) el UML fuera perdiendo peso en el desarrollo de software.
 
-De hecho, muchas de esas herramientas complejas de UML han ido desapareciendo... las pocas que quedan están totalmente desactualizadas y obsoletas. Microsoft tenía soporte para UML dentro de Visual Studio... y lo quitaron hace años.
+De hecho, muchas de esas herramientas complejas de UML han ido desapareciendo... las pocas que quedan están totally desactualizadas y obsoletas. Microsoft tenía soporte para UML dentro de Visual Studio... y lo quitaron hace años.
 
 Había ilusión.. y burbuja! Pero ilusión. Cubría un hueco, una necesidad real. La forma de llevar estos diagramas a la práctica era mala, y UML fue muriendo. Se quedó simplemente como una anécdota que seguian enseñando en las universidades. Y 3 ideas de diagramas que en algunos proyectos muy concretos se seguían usando.
 
@@ -36,18 +48,19 @@ UML se está redescubriendo... Y estamos empezando a usarlo un huevo! Muchísimo
 
 ## ¿Qué ha pasado?
 
-- La primera cosa que ha pasado es que hoy en día no estamos ya en el mundo de los monolitos dinosaurios. Hoy en día los sistemas son mucho más pequeños, modulares, desacoplados. Y montar esos diagramas es mucho más sencillo.
-- La segunda cosa que ha pasado es que las metodologías ágiles han cambiado la forma de trabajar:
-  - Ya no hacemos un diseño del sistema completo al principio del proyecto. Voy creando, poco a poco.. y voy haciendo hacemos diseños de componentes pequeños, que encajan en el sistema global.
-  - No hacemos los documentos para programas. Eso de crear un diagrama de clases.. y que desde ese diagrama se genere código JAVA... en serio?
-  - A la documentación hoy en día le damos mucha menos importancia. Hacemos diagramas para entendernos entre humanos, diagramas "light".
-- Las herramientas que tenemos hoy en día, han cambiado un huevo. <<< CLAVE!
+* La primera cosa que ha pasado es que hoy en día no estamos ya en el mundo de los monolitos dinosaurios. Hoy en día los sistemas son mucho más pequeños, modulares, desacoplados. Y montar esos diagramas es mucho más sencillo.
+* La segunda cosa que ha pasado es que las metodologías ágiles han cambiado la forma de trabajar:
+
+  * Ya no hacemos un diseño del sistema completo al principio del proyecto. Voy creando, poco a poco.. y voy haciendo hacemos diseños de componentes pequeños, que encajan en el sistema global.
+  * No hacemos los documentos para programas. Eso de crear un diagrama de clases.. y que desde ese diagrama se genere código JAVA... en serio?
+  * A la documentación hoy en día le damos mucha menos importancia. Hacemos diagramas para entendernos entre humanos, diagramas "light".
+* Las herramientas que tenemos hoy en día, han cambiado un huevo. <<< CLAVE!
 
 ## Herramientas guays
 
 Todas las herramientas guays.. y motivo principal para que hoy en día estemos tan encantados con UML son las herramientas que me permiten "escribir" diagramas.
 Las herramientas antiguas me permitían "dibujar" diagramas. Y dibujar es lento, tedioso, pesado.
-Hoy en día, los diagramas los escribimos. 
+Hoy en día, los diagramas los escribimos.
 Tenemos lenguajes que nos permiten escribir diagramas compatibles con UML de forma rápida y sencilla.
 
 Es más... hoy en día (Diciembre 2025) ni nos molestamos en escribir esos diagramas. Tenemos ayudantes (baratitos, poco coste de SS y de nóminas) que además escriben mucho mejor que nosotros: IAs.
@@ -65,12 +78,14 @@ No nos obsesionesmos con la perfección. Busquemos la eficacia.
 La idea all final es estandarizar la forma en la que pintamos esos diagramas. Y UML es un estándar aceptado por todo el mundo. Oye.. como todo lenguaje, con sus reglas gramaticales.. es complejo.. tiene muchas triquiñuelas... pero.. tampoco necesito ser el Shakespeare de UML para poder comunicarme de forma eficaz y eficiente con mis compañeros.
 
 Las 2 herramienats que hoy en día adoramos para la creación de diagramas UML son:
-- Mermaid.js: https://mermaid-js.github.io/mermaid/#/
-- PlantUML: https://plantuml.com/es/
+
+* Mermaid.js: [https://mermaid-js.github.io/mermaid/#/](https://mermaid-js.github.io/mermaid/#/)
+* PlantUML: [https://plantuml.com/es/](https://plantuml.com/es/)
 
 Ambas son librerías que ofrecen un lenguaje para escribir diagramas.
-- Mermaid permite hacer muchos diagramas, no solo UML. Y no permite hacer todos los diagramas que define el estandar UML.
-- PlantUML está mucho más orientado al estandar UML, y permite hacer todos los diagramas UML. Pero son más feos. Y el lenguaje es un poco más áspero.
+
+* Mermaid permite hacer muchos diagramas, no solo UML. Y no permite hacer todos los diagramas que define el estandar UML.
+* PlantUML está mucho más orientado al estandar UML, y permite hacer todos los diagramas UML. Pero son más feos. Y el lenguaje es un poco más áspero.
 
 Decisión 1: Si puedo hacer el diagrama que quiero hacer con Mermaid, uso Mermaid. Si no, uso PlantUML.
 
@@ -91,33 +106,33 @@ La documentación se guarda con el código, en el repo, que es donde tiene que e
 
 # Para sirven los gráficos?
 
-- Para facilitar la comunicación entre humanos.
-- Y al crear un DTE, vamos en capas... poco a poco.
+* Para facilitar la comunicación entre humanos.
+* Y al crear un DTE, vamos en capas... poco a poco.
 
 En general al comenzar un proyecto de software, vamos poco a poco.
 ¿Cuál es el primer obstaculo al que nos enfrentamos cuando empezamos a diseñoar un sistema de software?
 
-- Sincronizar mi lenguaje con el del cliente / usuarios.
-- Una vez sincronizados los lenguajes, entender bien qué es lo que quieren / necesitan (bajo de nivel)
-- Una vez entendido qué es lo que quieren / necesitan, empiezo a plantear un sistema que lo satisfaga.
-- Una vez planteado el sistema, empiezo a diseñar los componentes del sistema.
+* Sincronizar mi lenguaje con el del cliente / usuarios.
+* Una vez sincronizados los lenguajes, entender bien qué es lo que quieren / necesitan (bajo de nivel)
+* Una vez entendido qué es lo que quieren / necesitan, empiezo a plantear un sistema que lo satisfaga.
+* Una vez planteado el sistema, empiezo a diseñar los componentes del sistema.
 
 No empiezo un proyecto montando el diagrama de clases del sistema. Eso es una locura. Si posiblemente aún ni siquiera sé qué es lo que quieren los usuarios.
 
-- Diagrama de casos de uso (use case diagram): Primer diagrama que hago. Me ayuda a entender quiénes son los actores del sistema, y qué necesitan del sistema.
-- Diagrama de actividades (activity diagram): Me ayuda a entender los procesos / flujos de trabajo que los actores quieren llevar a cabo con el sistema.
-- Diagrama de secuencia (sequence diagram): Me ayuda a entender cómo interactúan los actores con el sistema, y cómo se comporta el sistema ante esas interacciones.
-- Diagrama de componentes/paquetes (component diagram): Me ayuda a entender los componentes del sistema, y cómo se relacionan entre sí.
-- Diagrama de clases (class diagram): Me ayuda a entender la estructura estática del sistema, las clases, atributos, métodos y relaciones entre clases.
-- Diagrama de máquinas de estado (state machine diagram): Me ayuda a entender los estados por los que puede pasar un objeto del sistema, y cómo cambia de estado ante ciertos eventos.
+* Diagrama de casos de uso (use case diagram): Primer diagrama que hago. Me ayuda a entender quiénes son los actores del sistema, y qué necesitan del sistema.
+* Diagrama de actividades (activity diagram): Me ayuda a entender los procesos / flujos de trabajo que los actores quieren llevar a cabo con el sistema.
+* Diagrama de secuencia (sequence diagram): Me ayuda a entender cómo interactúan los actores con el sistema, y cómo se comporta el sistema ante esas interacciones.
+* Diagrama de componentes/paquetes (component diagram): Me ayuda a entender los componentes del sistema, y cómo se relacionan entre sí.
+* Diagrama de clases (class diagram): Me ayuda a entender la estructura estática del sistema, las clases, atributos, métodos y relaciones entre clases.
+* Diagrama de máquinas de estado (state machine diagram): Me ayuda a entender los estados por los que puede pasar un objeto del sistema, y cómo cambia de estado ante ciertos eventos.
 
 Otra cosa importante a la hora de crear diagramas, que ha cambiado mucho en los últimos años, es el nivel de detalle.
 
-Tengo que representar en un diagrama TODO el sistema? Todos los comportamientos? Todas las clases? Todos los atributos y métodos? NO. Antiguamente SI!!!! 
+Tengo que representar en un diagrama TODO el sistema? Todos los comportamientos? Todas las clases? Todos los atributos y métodos? NO. Antiguamente SI!!!!
 
 Por que el diagrama era interpretado por herramientas, que generaban código, etc. Hoy en día NO. Hoy en día los diagramas son para humanos. Y creo un diagrama para contar lo que me interesa contar. Y para lo mismo, quizás hago 5 diagramas. Con más nivel de detalle o menos nivel de detalle; explicando unos casos de uso u otros.
 
-## Inicio de un proyecto de software 
+## Inicio de un proyecto de software
 
 No se empieza por los requisitos. Se empieza por entender quiénes son los actores del sistema, y qué necesitan del sistema: CASOS DE USO (USE CASES).
 
@@ -164,12 +179,13 @@ identificarse --> banco : "Verifica identidad"
 
 ## Requisitos:
 
-- Caso de uso 1: Identificarse
+* Caso de uso 1: Identificarse
   Requisitos associados:
-  - El sistema debe permitir a los clientes identificarse mediante una tarjeta bancaria y un PIN.
-  - El cliente puede intentar identificarse hasta 3 veces antes de bloquear la tarjeta.
-  - En la tarjeta está el pin, pero no vale solamente con eso, es necesario solicitar confirmación al backend del banco, caso que la tarjeta haya sido bloqueada/revocada por seguridad.
-  - El pin tendrá 4 dígitos.
+
+  * El sistema debe permitir a los clientes identificarse mediante una tarjeta bancaria y un PIN.
+  * El cliente puede intentar identificarse hasta 3 veces antes de bloquear la tarjeta.
+  * En la tarjeta está el pin, pero no vale solamente con eso, es necesario solicitar confirmación al backend del banco, caso que la tarjeta haya sido bloqueada/revocada por seguridad.
+  * El pin tendrá 4 dígitos.
 
 ## Diagrama de secuencia para la operación "Sacar dinero"
 
@@ -179,105 +195,115 @@ En el código debo tener TODO lo que efectivamente hace el sistema. En el diagra
 
 > Happy path: El camino feliz, el escenario principal.
 
-->>     =       - > >     Mensaje síncrono, que queda esperando respuesta.
--->>                      Mensaje asíncrono, no queda esperando respuesta.
+`->>`     Mensaje de **petición / llamada** (síncrona).
+`-->>`    Mensaje de **respuesta** a una petición previa.
 
 ```mermaid
-
 sequenceDiagram
 
-actor            U as "Usuario"
-participant      CA as "Cajero Automático"
-participant      S as "Servidor en el Banco"
+    actor U as "Usuario"
+    participant CA as "Cajero Automático"
+    participant S as "Servidor en el Banco"
 
-U  ->> +CA:      💳 Inserta tarjeta
-CA ->> U:        🔐 Solicita PIN
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ✅ PIN válido y Aprobación concedida
-CA ->> U:        Solicita Operación
-U  ->> CA:       Selecciona "Sacar Dinero"
-CA ->> U:        Solicita Cantidad
-U  ->> CA:       Introduce Cantidad
-CA ->> +S:       📩 Solicita Aprobación de Retiro
-S  -->> -CA:     ✅ Aprobación concedida
-CA ->> U:        Dispensa Dinero 💵
-U  ->> CA:       Retira Dinero
-CA ->> U:        ¿Desea otra operación?
-U  ->> CA:       No
-CA -->> -U:      Expulsa Tarjeta 💳
-
+    U->>CA: 💳 Inserta tarjeta
+    CA->>U: 🔐 Solicita PIN
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ✅ PIN válido y Aprobación concedida
+    CA->>U: Solicita Operación
+    U->>CA: Selecciona "Sacar Dinero"
+    CA->>U: Solicita Cantidad
+    U->>CA: Introduce Cantidad
+    CA->>S: 📩 Solicita Aprobación de Retiro
+    S-->>CA: ✅ Aprobación concedida
+    CA->>U: Dispensa Dinero 💵
+    U->>CA: Retira Dinero
+    CA->>U: ¿Desea otra operación?
+    U->>CA: No
+    CA-->>U: Expulsa Tarjeta 💳
 ```
 
 > Ejemplo con el usuario metiendo mal el pin 3 veces
 
 ```mermaid
 sequenceDiagram
-actor            U as "Usuario"
-participant      CA as "Cajero Automático"
-participant      S as "Servidor en el Banco"
-U  ->> +CA:      💳 Inserta tarjeta
-CA ->> U:        🔐 Solicita PIN
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ❌ PIN inválido
-CA ->> U:        ❌ PIN inválido. Intentos restantes: 2
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ❌ PIN inválido
-CA ->> U:        ❌ PIN inválido. Intentos restantes: 1
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ❌ PIN inválido
-CA ->> U:        ❌ PIN inválido. Tarjeta bloqueada por seguridad.
-CA -->> -U:      Expulsa Tarjeta 💳
+
+    actor U as "Usuario"
+    participant CA as "Cajero Automático"
+    participant S as "Servidor en el Banco"
+
+    U->>CA: 💳 Inserta tarjeta
+    CA->>U: 🔐 Solicita PIN
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ❌ PIN inválido
+    CA->>U: ❌ PIN inválido. Intentos restantes: 2
+
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ❌ PIN inválido
+    CA->>U: ❌ PIN inválido. Intentos restantes: 1
+
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ❌ PIN inválido
+    CA->>U: ❌ PIN inválido. Tarjeta bloqueada por seguridad.
+    CA-->>U: Expulsa Tarjeta 💳
 ```
 
 > Ejemplo: No hay billetes suficientes en el cajero
 
 ```mermaid
 sequenceDiagram
-actor            U as "Usuario"
-participant      CA as "Cajero Automático"
-participant      S as "Servidor en el Banco"
-U  ->> +CA:      💳 Inserta tarjeta
-CA ->> U:        🔐 Solicita PIN
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ✅ PIN válido y Aprobación concedida
-CA ->> U:        Solicita Operación
-U  ->> CA:       Selecciona "Sacar Dinero"
-CA ->> U:        Solicita Cantidad
-U  ->> CA:       Introduce Cantidad
-CA ->> CA:       Verifica disponibilidad de billetes
-CA ->> U:        ❌ No hay suficientes billetes disponibles
-CA ->> U:        ¿Desea otra operación?
-U  ->> CA:       No
-CA -->> -U:      Expulsa Tarjeta 💳
+
+    actor U as "Usuario"
+    participant CA as "Cajero Automático"
+    participant S as "Servidor en el Banco"
+
+    U->>CA: 💳 Inserta tarjeta
+    CA->>U: 🔐 Solicita PIN
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ✅ PIN válido y Aprobación concedida
+
+    CA->>U: Solicita Operación
+    U->>CA: Selecciona "Sacar Dinero"
+    CA->>U: Solicita Cantidad
+    U->>CA: Introduce Cantidad
+
+    CA->>CA: Verifica disponibilidad de billetes
+    CA->>U: ❌ No hay suficientes billetes disponibles
+    CA->>U: ¿Desea otra operación?
+    U->>CA: No
+    CA-->>U: Expulsa Tarjeta 💳
 ```
 
 > Ejemplo: El usuario no tiene saldo suficiente
 
 ```mermaid
 sequenceDiagram
-actor            U as "Usuario"
-participant      CA as "Cajero Automático"
-participant      S as "Servidor en el Banco"
-U  ->> +CA:      💳 Inserta tarjeta
-CA ->> U:        🔐 Solicita PIN
-U  ->> CA:       🔢 Introduce PIN
-CA ->> +S:       📩 Valida PIN y solicita Aprobación
-S  -->> -CA:     ✅ PIN válido y Aprobación concedida
-CA ->> U:        Solicita Operación
-U  ->> CA:       Selecciona "Sacar Dinero"
-CA ->> U:        Solicita Cantidad
-U  ->> CA:       Introduce Cantidad
-CA ->> +S:       📩 Solicita Aprobación de Retiro
-S  -->> -CA:     ❌ Saldo insuficiente
-CA ->> U:        ❌ No tiene saldo suficiente en su cuenta
-CA ->> U:        ¿Desea otra operación?
-U  ->> CA:       No
-CA -->> -U:      Expulsa Tarjeta 💳
+
+    actor U as "Usuario"
+    participant CA as "Cajero Automático"
+    participant S as "Servidor en el Banco"
+
+    U->>CA: 💳 Inserta tarjeta
+    CA->>U: 🔐 Solicita PIN
+    U->>CA: 🔢 Introduce PIN
+    CA->>S: 📩 Valida PIN y solicita Aprobación
+    S-->>CA: ✅ PIN válido y Aprobación concedida
+
+    CA->>U: Solicita Operación
+    U->>CA: Selecciona "Sacar Dinero"
+    CA->>U: Solicita Cantidad
+    U->>CA: Introduce Cantidad
+
+    CA->>S: 📩 Solicita Aprobación de Retiro
+    S-->>CA: ❌ Saldo insuficiente
+    CA->>U: ❌ No tiene saldo suficiente en su cuenta
+    CA->>U: ¿Desea otra operación?
+    U->>CA: No
+    CA-->>U: Expulsa Tarjeta 💳
 ```
 
 ## Diagramas más complejos!
@@ -287,147 +313,124 @@ Esos son diagramas muy simplones. Puedo llegar a mucho más nivel de detalle.
 No empiezo con estos diagramas. No tiene sentido. Tenemos que hacernos, con la operativa, con los detalles, con el lenguaje!
 
 ```mermaid
-
 sequenceDiagram
 
-    actor                   U as Usuario
-    participant             C as Cajero
-    participant             S as Servidor
+    actor U as Usuario
+    participant C as Cajero
+    participant S as Servidor
 
-    U->>C:                  💳 Insertar tarjeta
+    U->>C: 💳 Insertar tarjeta
 
     rect rgb(255,240,230)
-        note left of C:                 LECTURA DE LA TARJETA
-        critical                        Leer tarjeta
-        option                          Tarjeta caducada
-            rect rgb(255,230,200)
-                break                   No se puede procesar la operación
-                    C-->>U:                 Tarjeta caducada
-                    C-->>U:                 💳 Entrega la tarjeta
-                end
+        note left of C: LECTURA DE LA TARJETA
+        critical Leer tarjeta
+        option Tarjeta caducada
+            break Tarjeta caducada
+                C-->>U: Tarjeta caducada
+                C-->>U: 💳 Entrega la tarjeta
             end
-        option                          Error al leer la tarjeta
-            rect rgb(255,230,230)
-                break               
-                    C-->>U:                 Tarjeta no legible
-                    C-->>U:                 💳 Entrega la tarjeta
-                end
+        option Error al leer la tarjeta
+            break Tarjeta no legible
+                C-->>U: Tarjeta no legible
+                C-->>U: 💳 Entrega la tarjeta
             end
         end
     end
+
     rect rgb(255,255,230)
-        note left of S:                 PIN
-        loop                            Hasta 3 intentos si el pin no es válido
+        note left of S: PIN
+        loop Hasta 3 intentos si el PIN no es válido
             rect rgb(235,235,200)
-                note left of C:         Obtención del PIN
-                C-->>U:                 Solicitar PIN
-                critical                Esperar el PIN
-                    U->>C:                  Escribe su PIN
-                option                  No se ha introducido el PIN en 30 segundos
-                    rect rgb(255,230,230)
-                        break
-                            C->>U:          No se puede procesar la operación
-                            C->>U:          💳 Entrega la tarjeta
-                        end
+                note left of C: Obtención del PIN
+                C-->>U: Solicitar PIN
+                critical Esperar el PIN
+                    U->>C: Escribe su PIN
+                option Timeout
+                    break Timeout introduciendo PIN
+                        C->>U: No se puede procesar la operación
+                        C->>U: 💳 Entrega la tarjeta
                     end
                 end
-            end 
+            end
+
             rect rgb(235,235,180)
-                note left of S:         Validación del PIN
-                C->>+S:                 Solicitar validación del PIN de la tarjeta
-                critical                Validar PIN
-                        S-->>C:         PIN correcto
-                option                  PIN incorrecto
-                        S-->>C:         PIN incorrecto
-                option                  Servidor con problemas internos
-                    S-->>-C:             Notifica problemas internos
-                option                  Timeout
-                    note left of S:     El servidor no contesta
+                note left of S: Validación del PIN
+                C->>S: Solicitar validación del PIN
+                critical Validar PIN
+                    S-->>C: PIN correcto
+                option PIN incorrecto
+                    S-->>C: PIN incorrecto
+                option Problemas internos
+                    S-->>C: Notifica problemas internos
+                option Timeout
+                    note left of S: El servidor no contesta
                 end
 
-                opt                     Si ha habido timeout o problemas internos
-            rect rgb(255,230,230)
-                    break               No se puede validar el PIN
-                        C-->>U:         💳 Entrega la tarjeta
-                        C-->>U:         No se puede procesar la operación
-                    end
+                opt Error validando PIN
+                    break No se puede validar el PIN
+                        C-->>U: 💳 Entrega la tarjeta
+                        C-->>U: No se puede procesar la operación
                     end
                 end
-            end 
+            end
         end
 
-            rect rgb(235,235,180)
-        critical                Si no se ha conseguido un PIN correcto
-            rect rgb(255,230,230)
-                    break               
-                        C-->>U:         💳 Entrega la tarjeta
-                        C-->>U:         No se puede procesar la operación
-                    end
-                end
+        critical Sin PIN correcto
+            break Demasiados intentos
+                C-->>U: 💳 Entrega la tarjeta
+                C-->>U: No se puede procesar la operación
             end
-            end
-    end 
+        end
+    end
 
     rect rgb(240,240,255)
-        note left of S:     SACAR DINERO
-
+        note left of S: SACAR DINERO
         loop Hasta 3 intentos si la cantidad no es válida
             rect rgb(230,230,255)
-                note left of C:         Cantidad
-                C-->>U:                 Solicitar cantidad
-                critical                     Esperar la cantidad la Cantidad
-                    U->>C:                  Escribe la cantidad
-                    opt                 Si no hay suficiente dinero o <BR/>no se le puede entregar
-                        C-->>U:         No hay tanto dinero o <BR/>debe introducir una cantidad <BR/>múltiplo del tipo de<BR/> billetes disponibles
+                note left of C: Cantidad
+                C-->>U: Solicitar cantidad
+                critical Esperar la cantidad
+                    U->>C: Escribe la cantidad
+                option Cantidad no válida
+                    C-->>U: No hay tanto dinero o<br/>debe introducir una cantidad<br/>múltiplo del tipo de<br/>billetes disponibles
+                option Timeout
+                    break Timeout introduciendo cantidad
+                        C-->>U: No se puede procesar la operación
+                        C-->>U: 💳 Entrega la tarjeta
                     end
-                option                 No se ha introducido la cantidad en 30 segundos
-            rect rgb(255,230,230)
-                        break                 
-                            C-->>U:                 No se puede procesar la operación
-                            C-->>U:                 💳 Entrega la tarjeta
-                        end
-                        end
                 end
-            end 
+            end
+
             rect rgb(230,230,255)
-
-        critical                Confirmar con el servidor
-        C->>S:                 Retirar importe solicitado
-        S-->>C:                OK
-        option                 No hay suficiente dinero en la cuenta
-            S-->>C:            No hay suficiente dinero
-            C-->>U:            No hay suficiente dinero
-        option                Error del servidor
-            rect rgb(255,230,230)
-            S-->>C:            Error del servidor
-            break                   Sistema no operativo
-                C->>U:                 No se puede procesar la operación
-                C->>U:                 💳 Entrega la tarjeta
-            end
-            end
-        option              Timeout
-            rect rgb(255,230,230)
-            break                   Sistema no operativo
-                C->>U:                 No se puede procesar la operación
-                C->>U:                 💳 Entrega la tarjeta
-            end
-            end
-        end
-        end
-        end
-                    rect rgb(230,230,255)
-        critical                Si no se ha conseguido una cantidad Correcta
-            rect rgb(255,230,230)
-                    break               
-                        C-->>U:         💳 Entrega la tarjeta
-                        C-->>U:         No se puede procesar la operación
+                critical Confirmar con el servidor
+                    C->>S: Retirar importe solicitado
+                    S-->>C: OK
+                option No hay suficiente dinero en la cuenta
+                    S-->>C: No hay suficiente dinero
+                    C-->>U: No hay suficiente dinero
+                option Error del servidor
+                    break Sistema no operativo
+                        C->>U: No se puede procesar la operación
+                        C->>U: 💳 Entrega la tarjeta
+                    end
+                option Timeout
+                    break Sistema no operativo
+                        C->>U: No se puede procesar la operación
+                        C->>U: 💳 Entrega la tarjeta
                     end
                 end
             end
-            end
+        end
 
-        C-->>U:                 💳 Entrega la tarjeta
-        C-->>U:                 💰 Entrega el dinero
+        critical Cantidad no correcta tras intentos
+            break No se ha conseguido una cantidad correcta
+                C-->>U: 💳 Entrega la tarjeta
+                C-->>U: No se puede procesar la operación
+            end
+        end
+
+        C-->>U: 💳 Entrega la tarjeta
+        C-->>U: 💰 Entrega el dinero
     end
 
 ```
@@ -440,43 +443,48 @@ Lenguajes naturales, los que usamos los humanos: Español, Inglés, Chino, etc.
 En los lenguajes naturales, la gramática la pisamos de forma continua. Nos saltamos reglas, inventamos palabras, usamos expresiones que no existen, etc. Y la gente me entiende perfectamente.
 Los lenguajes formales son lenguajes con una gramática estricta.
 
-    Matemático:   3 + 5 = 8
-                  3 = 5 8 +
+```
+Matemático:   3 + 5 = 8
+              3 = 5 8 +
 
-                  tres más cinco es igual a ocho
+              tres más cinco es igual a ocho
+```
 
 ---
 
 # EJEMPLO 1: App de consola a la que le doy una palabra, un idioma y me devuelve los significados de esa palabra en ese idioma si existe.
 
-  $ buscarPalabra ES manzana
-  La palabra si existe en el diccionario de español.
-  Significados:
-  1. Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
+$ buscarPalabra ES manzana
+La palabra si existe en el diccionario de español.
+Significados:
 
-  $ buscarPalabra ES archilococo
-  La palabra no existe en el diccionario de español.
+1. Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
+
+$ buscarPalabra ES archilococo
+La palabra no existe en el diccionario de español.
 
 ---
 
 > Pregunta. Cuantos proyectos JAVA montamos para esta app?                              6
-            Si lo gestionamos con MAVEN, cuántos archivos pom.xml tenemos que crear?    7
-            Cuántos repos de git creo?                                                  7
+> Si lo gestionamos con MAVEN, cuántos archivos pom.xml tenemos que crear?   7
+> Cuántos repos de git creo?                                                 7
 
 ---
+
 No quiero un monolito... ya no estamos en es época!
-- Las palabras las voy a tener en ficheros de texto:
+
+* Las palabras las voy a tener en ficheros de texto:
   diccionarios/
-    ES.txt
-      manzana=Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
-      melón=Fruto del melonar, de forma ovalada y sabor dulce.|Persona con pocas luces.
-    EN.txt
-    FR.txt
-    IT.txt
-    DE.txt
+  ES.txt
+  manzana=Fruto del manzano, de forma redonda y sabor dulce o ácido, según la variedad.
+  melón=Fruto del melonar, de forma ovalada y sabor dulce.|Persona con pocas luces.
+  EN.txt
+  FR.txt
+  IT.txt
+  DE.txt
+
   > PREGUNTA: Al programa que saca los resultados por pantalla, le importa algo, si las palabras las tengo en un fichero de texto, en una base de datos, o en un servicio web? NO. Y entonces... por que querría juntarlos esos componentes
   > PREGUNTA... Si el día de mañana cambiase la interfaz gráfica para que no fuera de consola, sino una app desktop, necesitaria cambiar la parte de gestión de palabras? NO.
-
 
 ---
 
@@ -491,19 +499,21 @@ Solo son guías que me ayudan en la toma de decisiones.
 ## SOLID
 
 SRP: Single Responsibility Principle
-  1. Una clase debe tener una única responsabilidad. RUINA! AMBIGUA! Define responsabilidad.
-  2. Una clase debe tener una única razón para cambiar. RUINA! Define razón para cambiar.
-  3. Una clase solo debe depender de un único actor o stakeholder. GUAY! ACTOR... de los actores del diagrama de casos de uso.
-     Alguien que tenga responsabilidad para solicitar un cambio en un coimponente.
-      > La persona que puede solicitar un cambio en la UI de nuestro programa: El usuario final.
-      > Quién define si las palabras se deben guardar en ficheros o en BBDD? El usuario final? NO.. a ese le vale mierda!
+
+1. Una clase debe tener una única responsabilidad. RUINA! AMBIGUA! Define responsabilidad.
+2. Una clase debe tener una única razón para cambiar. RUINA! Define razón para cambiar.
+3. Una clase solo debe depender de un único actor o stakeholder. GUAY! ACTOR... de los actores del diagrama de casos de uso.
+   Alguien que tenga responsabilidad para solicitar un cambio en un coimponente.
+
+   > La persona que puede solicitar un cambio en la UI de nuestro programa: El usuario final.
+   > Quién define si las palabras se deben guardar en ficheros o en BBDD? El usuario final? NO.. a ese le vale mierda!
 
 OCP: Open/Closed Principle
 LSP: Liskov Substitution Principle
 ISP: Interface Segregation Principle
 DIP: Dependency Inversion Principle
-     Un componente de alto nivel no debe depender de implementaciones concretas de componentes de bajo nivel. Sino que ambos quedeben depender de abstracciones (interfaces).
-     A una clase (si lo aplico a bajo nievl) o a una implementación de un componente (si lo aplico a alto nivel) no le pueden llegar flechas. De ellos solo pueden salir flechas en el diagrama UML. Es las interfaces o los componentes abstractos (APIS) a las que les pueeden llegar flechas
+Un componente de alto nivel no debe depender de implementaciones concretas de componentes de bajo nivel. Sino que ambos quedeben depender de abstracciones (interfaces).
+A una clase (si lo aplico a bajo nievl) o a una implementación de un componente (si lo aplico a alto nivel) no le pueden llegar flechas. De ellos solo pueden salir flechas en el diagrama UML. Es las interfaces o los componentes abstractos (APIS) a las que les pueeden llegar flechas
 
 ## SoC: Separation of Concerns
 
@@ -515,50 +525,50 @@ Un producto de software por definición es un producto sujeto a cambios y manten
 
 Un coche por definición es un producto sujeto a (cambios y) mantenimientos.
 
-  Escribir código <> Pruebas -> OK ---> Refactorización <> Pruebas -> OK -> Liberar el código
-  <------50% del trabajo--------->      <------50% del trabajo--------->
-         8 horas                               8 horas
-
+Escribir código <> Pruebas -> OK ---> Refactorización <> Pruebas -> OK -> Liberar el código
+<------50% del trabajo--------->      <------50% del trabajo--------->
+8 horas                               8 horas
 
 ---
-               GestorDePalabrasAPI
-                      ^
-                      |
-            GestorDePalabrasEnFicheros         InterfazDeUsuarioAPI
-                      ^                                ^
-                      |                                |
-                     APP -----------------> Interfaz de usuario (Consola)
-                      |
-                      v
-              DiccionariosConcretos
 
-
+```
+           GestorDePalabrasAPI
+                  ^
+                  |
+        GestorDePalabrasEnFicheros         InterfazDeUsuarioAPI
+                  ^                                ^
+                  |                                |
+                 APP -----------------> Interfaz de usuario (Consola)
+                  |
+                  v
+          DiccionariosConcretos
+```
 
 PR1: Frontal de consola                FRONT
 PR2: API de Frontal de consola         API (interfaces en JAVA)
 PR3: Gestión de palabras               BACK
 PR4: API de la Gestión de palabras     API (interfaces en JAVA)
 PR5: Aplicación                        APP (FLUJO)
-      Obtener Idioma
-      Obtener palabra
-      Mirar si tengo Diccionario para ese idioma
-      Si no lo tengo, avisar al usuario Y me piro
-      Si lo tengo, buscar palabra en el diccionario
-      Si no la encuentro, avisar al usuario Y me piro
-      Si la encuentro, mostrar los significados al usuario Y me piro
+Obtener Idioma
+Obtener palabra
+Mirar si tengo Diccionario para ese idioma
+Si no lo tengo, avisar al usuario Y me piro
+Si lo tengo, buscar palabra en el diccionario
+Si no la encuentro, avisar al usuario Y me piro
+Si la encuentro, mostrar los significados al usuario Y me piro
 PR6: Y los diccionarios ? Los datos? Tiene versiones? Diccionario de ES con 1000 palabras y mañana sacar uno de 5000 palabras?
 PR7: Junte todo!
+
 ---
 
 git: submodules
 maven: multi-modules
 java: modulo (Java 9: proyecto Jigsaw)
 
-
+```text
   proyecto-gestion-animalitos-CRUD/  MICROSERVICIO HTTP REST          Repo de git
     .gitmodules
 
-      
     capa-dominio/
       api/
         pom.xml
@@ -595,35 +605,37 @@ java: modulo (Java 9: proyecto Jigsaw)
         <module>capa-controlador/v2/api</module>
         <module>capa-controlador/v2/impl</module>
       </modules>
-
+```
 
 ---
 
-
 Fabrico bicicletas: BTWIN - Decathlon
-  - Fabrico el sillín? NO
-  - Fabrico las ruedas? NO
-  - Fabrico el cuadro? NO
-  - Fabrico el sistema de frenos? NO 
 
-  Integración de componentes... componentes que yo también ESPECIFICO: API!!!!!
+* Fabrico el sillín? NO
+* Fabrico las ruedas? NO
+* Fabrico el cuadro? NO
+* Fabrico el sistema de frenos? NO
 
-  Dire que quiero una rueda con TALES características.
-  Diré que quiero un sistema de frenos con TALES características.
+Integración de componentes... componentes que yo también ESPECIFICO: API!!!!!
 
-  Habrá dependencias entre mis componentes: Sistema de frenos ---> Ruedas
+Dire que quiero una rueda con TALES características.
+Diré que quiero un sistema de frenos con TALES características.
+
+Habrá dependencias entre mis componentes: Sistema de frenos ---> Ruedas
 
 Esas especificaciones son las APIs de mis componentes.
 Pregunta, me quiero atar yo a un modelo de rueda concreto de un fabricante?
 
-
+```text
 BTWIN XR-289 (v1)
   - Ruedas: Rueda MTB 29" aluminio BTWIN XR-289
   - Sistema de frenos: SHIMANO MT200 frenos de disco hidráulicos
   - Cuadro: Cuadro aluminio BTWIN XR-289
   - Sillín: Sillín MTB BTWIN XR-289
+
 BTWIN XR-289 (v2)
   - Ruedas: Rueda MTB 29" carbono BTWIN XR-289
   - Sistema de frenos: SHIMANITO MT210 frenos de disco hidráulicos
   - Cuadro: Cuadro carbono BTWIN XR-289
   - Sillín: Sillín MTB BTWIN XR-289
+```
